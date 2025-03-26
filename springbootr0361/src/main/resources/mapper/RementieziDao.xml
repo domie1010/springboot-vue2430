@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RementieziDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RementieziEntity" id="rementieziMap">
+        <result property="biaoti" column="biaoti"/>
+        <result property="tiezifenlei" column="tiezifenlei"/>
+        <result property="faburen" column="faburen"/>
+        <result property="faburiqi" column="faburiqi"/>
+        <result property="tupian" column="tupian"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RementieziVO" >
+		SELECT * FROM rementiezi  rementiezi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RementieziVO" >
+		SELECT  rementiezi.* FROM rementiezi  rementiezi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RementieziView" >
+
+		SELECT  rementiezi.* FROM rementiezi  rementiezi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RementieziView" >
+		SELECT * FROM rementiezi  rementiezi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
